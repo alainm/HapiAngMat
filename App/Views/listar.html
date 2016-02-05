@@ -1,0 +1,40 @@
+﻿<!-- Esses templates de página é como se fossem os ASCX (Web User Control)
+     ou Partial Pages (Views) -->
+<!-- Pra controlar a visibilidade dos elementos
+     Utilizamos a diretiva NG-SHOW, ele espera um TRUE ou FALSE
+      FALSE -> DISPLAY NONE
+      TRUE -> VISIBLE = TRUE -->
+<table ng-show="listaContatos.length > 0">
+    <thead>
+        <tr>
+            <th>Ação</th>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>E-Mail</th>
+            <th>Telefone</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- A diretiva NG-REPEAT é como se fosse o FOREACH
+             pra carregar uma tabela lá no MVC, ela vai percorrer
+             um array, uma lista de registros -->
+        <!-- Dentro da células vamos exibir as informações dentro
+             de uma expressão -->
+        <tr ng-repeat="contato in listaContatos">
+            <td>
+                <input ng-click="clickExcluir($index, contato)" type="button" id="excluir" value="Excluir" />
+            </td>
+            <td>{{contato.ID_AMIGO}}</td>
+            <td>{{contato.NM_AMIGO}}</td>
+            <td>{{contato.DS_EMAIL}}</td>
+            <td>{{contato.NR_TELEFONE}}</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5">Total: {{listaContatos.length}}</td>
+        </tr>
+    </tfoot>
+</table>
+
+<input ng-click="clickCarregar()" type="button" id="carregar" name="carregar" value="Carregar" />

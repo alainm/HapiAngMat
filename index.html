@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+
+<!-- O Angular possui DIRETIVAS (ATRIBUTOS, ELEMENTOS) proprios
+     exclusivos dele, tudo que começa com NG- é diretiva do angular
+     Pra amarrar (a aplicação em angular aqui na página) temos
+     que utilizar a diretiva NG-APP -->
+<body ng-app="SISCONTATOS">
+
+    <!-- SPA significa SINGLE PAGE APPLICATIONS, aplicações
+         De uma únicá página, web moderna (3.0)
+        Não é um padrão de projeto, não é uma tecnologia é
+        um estilo de desenvolvimento WEB
+        A ideologia dessa web é MAIS CODIGO JAVASCRIPT
+        e menos códigos de servidor -->
+    <!-- Similar ao JQUERY o angular também tem diversos modulos
+         que rodam em cima dele (Rotas, Animação, Cookies, TouchScREEN)-->
+    <header>
+        <div>
+            <h1>..:: TITULO DA PÁGINA ::..</h1>
+        </div>
+        <div>
+            <input ng-click="redirecionar('/ListarContatos')" type="button" id="listar" value="Listar Contatos" />
+            <input ng-click="redirecionar('/CadastrarContato')" type="button" id="cadastrar" value="Cadastrar Contato" />
+            <br /><br />
+        </div>
+    </header>
+
+    <section>
+        <!-- Similar a uma master page (PlaceHolder) ou no mvc
+             Layout Page (RenderBody) temos que definir um local
+             da tela pra carregar (InnerHtml) um fragmento de tela
+             Listar e Cadastrar.html-->
+        <div ng-view>
+
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            <p>Todos os direitos reservados ao <strong>BOZO</strong></p>
+        </div>
+    </footer>
+
+    <!-- Importamos todas as biloitecas (Angular, Modulo de rotas,
+         Arquivo de Controller e qualquer outro arquivo JS) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <!--Esse arquivo é o modulo de ROTAS do angular (NGROUTE) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
+
+    <script src="App/inicializacao.js"></script>
+    <script src="App/Controllers/contatoController.js"></script>
+    <script src="App/Services/contatoService.js"></script>
+
+</body>
+</html>
