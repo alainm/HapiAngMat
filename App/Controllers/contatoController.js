@@ -1,4 +1,4 @@
-﻿//É na controller ue programamos a tela
+﻿//É na controller que programamos a tela
 //Toda a lógica de carregamento da página
 //Códigos que vão ser executados quando disparar eventos de página
 //Toda a programaçao fica no controller
